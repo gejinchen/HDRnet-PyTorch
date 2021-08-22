@@ -9,9 +9,7 @@ Input / Output / Ground Truth
 
 ## Dataset
 
-A small example "false color" dataset is available [here](https://drive.google.com/file/d/1Gq2fzDTxogsR9KXOLYUlaVuMIXpHgHAI/view?usp=sharing). Note that raw images in .dng format are also supported.
-
-A dataset folder should have the following structure:
+This implementation supports LDR images and raw images in .dng format are also supported. A dataset folder should have the following structure:
 
 ```bash
 dataset
@@ -22,6 +20,7 @@ dataset
     ├── input
     └── output
 ```
+A small example "false color" dataset is available [here](https://drive.google.com/file/d/1Gq2fzDTxogsR9KXOLYUlaVuMIXpHgHAI/view?usp=sharing).
 
 ## Usage
 To train a model (on GPU), run the following command:
