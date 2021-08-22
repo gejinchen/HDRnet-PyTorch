@@ -9,7 +9,7 @@ Input / Output / Ground Truth
 
 ## Dataset
 
-This implementation supports LDR images and raw images in .dng format. A dataset folder ideally should have the following structure:
+This implementation supports raw images in .dng format and LDR images. A dataset folder ideally should have the following structure:
 
 ```bash
 dataset
