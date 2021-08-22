@@ -13,19 +13,19 @@ This implementation supports LDR images and raw images in .dng format. A dataset
 
 ```bash
 dataset
-├── test
+├── train
 │   ├── input
 │   └── output
-└── train
+└── eval
     ├── input
     └── output
 ```
-A small example "false color" dataset is available [here](https://drive.google.com/file/d/1Gq2fzDTxogsR9KXOLYUlaVuMIXpHgHAI/view?usp=sharing).
+A small example "false color" dataset is available [here](https://drive.google.com/file/d/1Aix4Snl4mwBjGxkn_irqehcmfayMG8XO/view?usp=sharing).
 
 ## Usage
 To train a model (on GPU), run the following command:
 ```bash
-python train.py --epochs=1000 --data_dir=<data_dir> --eval_data_dir=<eval_data_dir> --cuda
+python train.py --epochs=1000 --train_data_dir=<data_dir> --eval_data_dir=<eval_data_dir> --cuda
 ```
 
 To test a model on a single image, run the following command:
