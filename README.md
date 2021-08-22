@@ -28,6 +28,8 @@ To train a model (on GPU), run the following command:
 python train.py --epochs=1000 --train_data_dir=<train_data_dir> --eval_data_dir=<eval_data_dir> --cuda
 ```
 
+Use `--hdr` when handling raw (.dng) images.
+
 To test a model on a single image, run the following command:
 ```bash
 python test.py --ckpt_path=<ckpt_path> --test_img_path=<test_img_path> --cuda
