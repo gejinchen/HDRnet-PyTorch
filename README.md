@@ -25,7 +25,7 @@ python train.py --epochs=1000 --data_dir=<data_dir> --eval_data_dir=<eval_data_d
 
 To test a model on a single image, run the following command:
 ```bash
-python test.py --ckpt_path=<ckpt_path> --test_path=<test_path> --cuda
+python test.py --ckpt_path=<ckpt_path> --test_img_path=<test_img_path> --cuda
 ```
 
 ## Known issues and limitations
