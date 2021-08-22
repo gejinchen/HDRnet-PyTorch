@@ -31,3 +31,4 @@ python test.py --ckpt_path=<ckpt_path> --test_path=<test_path> --cuda
 ## Known issues and limitations
 * HDRnet is a lightweight model, but it requires high resolution images for training, so data processing could be a bottleneck for speed. For generality, we did not do much optimisation in this regard, so the current data pipeline is quite slow. One possible solution is to rewrite the dataset classes to pre-load and pre-process all images before training.
 * You could switch on data augmentation in `transforms.Compose`, but the for the same reason as above, it is very inefficient to do data augmentation on CPU. One possible solution is to do data augmentation on GPU.
+* Currently, the model has a fixed structure as decribed in the original paper. This implementation does not support a variable network structure like the [official ten TensorFlow implementation](https://github.com/google/hdrnet.git).
