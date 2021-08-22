@@ -25,7 +25,7 @@ A small example "false color" dataset is available [here](https://drive.google.c
 ## Usage
 To train a model (on GPU), run the following command:
 ```bash
-python train.py --epochs=1000 --train_data_dir=<data_dir> --eval_data_dir=<eval_data_dir> --cuda
+python train.py --epochs=1000 --train_data_dir=<train_data_dir> --eval_data_dir=<eval_data_dir> --cuda
 ```
 
 To test a model on a single image, run the following command:
