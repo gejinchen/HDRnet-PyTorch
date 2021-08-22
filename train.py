@@ -6,7 +6,6 @@ import torch.nn as nn
 from argparse import ArgumentParser
 from datasets import Train_Dataset, Eval_Dataset
 from models import HDRnetModel
-from test import test
 from torch.optim import Adam, lr_scheduler
 from torchvision.transforms.functional import vflip, hflip
 from torch.utils.data import DataLoader
@@ -100,7 +99,7 @@ def eval(params, valid_loader, model, device):
             target = torch.div(target, 255.0)
 
             output = model(low, full)
-            save_image(output, os.path.join(params['test_out'], str(batch_idx)+'.png'))
+            save_image(output, os.path.join(params['eval_out'], str(batch_idx)+'.png'))
             eval_psnr = psnr(output, target).item()
             psnr_meter.update(eval_psnr)
 
@@ -121,9 +120,9 @@ def parse_args():
 
     # Data pipeline and data augmentation
     parser.add_argument('--batch_size', default=4, type=int, help='Size of a mini-batch')
-    parser.add_argument('--data_dir', type=str, required=True, help='Dataset path')
+    parser.add_argument('--train_data_dir', type=str, required=True, help='Dataset path')
     parser.add_argument('--eval_data_dir', default=None, type=str, help='Directory with the validation data.')
-    parser.add_argument('--test_out', default='./outputs', type=str, help='Test output path')
+    parser.add_argument('--eval_out', default='./outputs', type=str, help='Validation output path')
     parser.add_argument('--hdr', action='store_true', help='Handle HDR image')
 
     # Model parameters
@@ -150,7 +149,7 @@ if __name__ == '__main__':
     # Folders
     os.makedirs(params['ckpt_dir'], exist_ok=True)
     os.makedirs(params['stats_dir'], exist_ok=True)
-    os.makedirs(params['test_out'], exist_ok=True)
+    os.makedirs(params['eval_out'], exist_ok=True)
 
     # Dataloader for training
     train_dataset = Train_Dataset(params)

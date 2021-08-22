@@ -45,7 +45,7 @@ class Train_Dataset(BaseDataset):
     """Class for training images."""
 
     def __init__(self, params=None):
-        self.data_path = params['data_dir']
+        self.data_path = params['train_data_dir']
         self.input_paths = get_files(os.path.join(self.data_path, 'input'))
         self.input_res = params['input_res']
         self.output_res = params['output_res']
