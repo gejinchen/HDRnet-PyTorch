@@ -1,0 +1,4 @@
+ckpts/
+__pycache__/
+outputs/
+stats/
