@@ -1,9 +1,9 @@
 # Deep Bilateral Learning for Real-Time Image Enhancements
 This repository contains a PyTorch reimplementation of [Deep Bilateral Learning for Real-Time Image Enhancements](https://groups.csail.mit.edu/graphics/hdrnet/).
 <p float="left">
-  <img src="assets/false_in.jpg" width="300" />
-  <img src="assets/false_out.jpg" width="300" /> 
-  <img src="assets/false_gt.jpg" width="300" />
+  <img src="assets/false_in.jpg" width="250" />
+  <img src="assets/false_out.jpg" width="250" /> 
+  <img src="assets/false_gt.jpg" width="250" />
 </p>
 Input / Output / Ground Truth
 
