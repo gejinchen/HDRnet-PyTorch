@@ -3,7 +3,7 @@ This repository contains a PyTorch reimplementation of [Deep Bilateral Learning 
 
 ## Dataset
 
-An example "false color" dataset is available [here](https://drive.google.com/file/d/1Gq2fzDTxogsR9KXOLYUlaVuMIXpHgHAI/view?usp=sharing). Note that raw images in .dng format are also supported.
+An small example "false color" dataset is available [here](https://drive.google.com/file/d/1Gq2fzDTxogsR9KXOLYUlaVuMIXpHgHAI/view?usp=sharing). Note that raw images in .dng format are also supported.
 
 A dataset folder should have the following structure:
 
@@ -29,5 +29,5 @@ python test.py --ckpt_path=<ckpt_path> --test_path=<test_path> --cuda
 ```
 
 ## Known issues and limitations
-* HDRnet is a lightweight model but it requires high resolution images for training, so the data processing could be a bottleneck for speed. For generality, we did not do much optimisation in this regard, so the current pipeline is quite slow. One possible solution is to rewrite the dataset classes to pre-load and pre-process all images before training.
+* HDRnet is a lightweight model, but it requires high resolution images for training, so data processing could be a bottleneck for speed. For generality, we did not do much optimisation in this regard, so the current data pipeline is quite slow. One possible solution is to rewrite the dataset classes to pre-load and pre-process all images before training.
 * You could switch on data augmentation in `transforms.Compose`, but the for the same reason as above, it is very inefficient to do data augmentation on CPU. One possible solution is to do data augmentation on GPU.
