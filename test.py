@@ -41,7 +41,7 @@ def test(params, model):
         save_image(full, 'input.png')
 
 def load_img(params):
-    full = io.imread(params['test_path'])
+    full = io.imread(params['test_img_path'])
     full = torch.from_numpy(full.transpose((2, 0, 1)))
     low = resize(full, (params['input_res'], params['input_res']), Image.NEAREST)
     low = low.unsqueeze(0)
@@ -49,7 +49,7 @@ def load_img(params):
     return low, full
 
 def load_img_hdr(params):
-    full = rawpy.imread(params['test_path'])
+    full = rawpy.imread(params['test_img_path'])
     full = full.postprocess(use_camera_wb=True, half_size=False, no_auto_bright=True, output_bps=16)
     full = np.asarray(full, dtype=np.float32)
     full = torch.from_numpy(full.transpose((2, 0, 1)))
@@ -61,7 +61,7 @@ def load_img_hdr(params):
 
 def parse_args():
     parser = ArgumentParser(description='HDRnet testing')
-    parser.add_argument('--test_path', type=str, required=True, help='Test image path')
+    parser.add_argument('--test_img_path', type=str, required=True, help='Test image path')
     parser.add_argument('--ckpt_path', type=str, help='Checkpoint path')
     parser.add_argument('--cuda', action='store_true', help='Use CUDA')
 
