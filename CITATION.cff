@@ -1,0 +1,9 @@
+cff-version: "1.2.0"
+date-released: 2021-08
+message: "If you use this software, please cite it using these metadata."
+title: "HDRnet-PyTorch"
+url: "https://github.com/gejinchen/HDRnet-PyTorch.git"
+authors:
+  - family-names: Ge
+    given-names: Jinchen
+    orcid: https://orcid.org/0000-0002-8679-9700
